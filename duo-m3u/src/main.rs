@@ -8,6 +8,7 @@
 use glob::glob;
 use std::env;
 use std::process::Command;
+use std::process;
 extern crate my_lib;
 
 /// make m3u file and open.
@@ -15,6 +16,10 @@ fn main() {
     // args
     let args: Vec<String> = env::args().collect();
     //println!("{:?}", args);
+    if args.len() != 3 {
+        println!("usage: \nduo-m3u [Disc01|Disc02|Disc03|Disc04|Disc05|review] [skip num] [take num]");
+        process::exit(1);
+    }
     let skip: usize = args[2].parse().unwrap();
     let take: usize = args[3].parse().unwrap();
     let disc = &args[1];
