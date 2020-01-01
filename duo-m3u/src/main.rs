@@ -16,7 +16,7 @@ fn main() {
     // args
     let args: Vec<String> = env::args().collect();
     //println!("{:?}", args);
-    if args.len() != 3 {
+    if args.len() != 4 {
         println!("usage: \nduo-m3u [Disc01|Disc02|Disc03|Disc04|Disc05|review] [skip num] [take num]");
         process::exit(1);
     }
